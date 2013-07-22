@@ -11,4 +11,3 @@ Thumbs.db
 
 # Ignore sass-cache files.
 *.sass-cache*
-*.css*
