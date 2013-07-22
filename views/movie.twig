@@ -19,31 +19,9 @@
 
     <meta property="fb:admins" content="{{ fb_admin_id }}" />
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/app.css" media="Screen" type="text/css" />
 
     <style type="text/css">
-      .container {
-        margin: 0 auto;
-        width:920px;
-        border: 5px solid grey;
-        border-radius: 30px;
-        padding:20px;
-      }
-
-      .container p,
-      .container h1 {
-        font-family: Arial;
-      }
-
-      .container img {
-        position: relative;
-        left: 50%;
-        margin-left: -164px;
-      }
-
-      .container #signinButton {
-        float: right;
-      }
     </style>
 
   </head>
@@ -60,15 +38,22 @@
 
     <div class="container">
 
-      <iframe width="640" height="360" src="//www.youtube.com/embed/{{ videoid }}" frameborder="0" allowfullscreen></iframe>
+      <div class="contenitore-video">
+        <iframe width="640" height="360" src="//www.youtube.com/embed/{{ videoid }}" frameborder="0" allowfullscreen></iframe>
+      </div>
 
-      <h1>{{ titolo }}</h1>
-      <p>{{ url }}</p>
-      <p>{{ url_assoluto }}</p>
-      
-      <p>{{ descrizione }}</p>
+      <div class="informazioni">
+        <h1>{{ titolo }}</h1>
+        <ul>
+          <li>{{ url }}</li>
+          <li>{{ url_assoluto }}</li>
+          <li>{{ descrizione }}</li>
+        </ul>
+      </div>
 
       <fb:like href="{{ url_assoluto }}" send="false" width="450" show_faces="true"></fb:like>
     </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   </body>
 </html>
