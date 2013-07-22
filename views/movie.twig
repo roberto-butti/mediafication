@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC>
+<html xmlns:fb="http://ogp.me/ns/fb#">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>{{ titolo }}</title>
+
+    <meta property="og:site_name" content="{{ sito_nome }}">
+    <meta property="og:url" content="{{ url }}">
+    <meta property="og:title" content="{{ titolo }}">
+    <meta property="og:type" content="video">
+    <meta property="og:image" content="{{ immagine }}">
+
+    <meta property="og:description" content="{{ descrizione }}">
+
+    <meta property="og:video" content="http://www.youtube.com/v/{{ videoid }}?version=3&amp;autohide=1">
+    <meta property="og:video:type" content="application/x-shockwave-flash">
+    <meta property="og:video:width" content="640">
+    <meta property="og:video:height" content="360">
+
+    <meta property="fb:admins" content="{{ fb_admin_id }}" />
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <style type="text/css">
+      .container {
+        margin: 0 auto;
+        width:920px;
+        border: 5px solid grey;
+        border-radius: 30px;
+        padding:20px;
+      }
+
+      .container p,
+      .container h1 {
+        font-family: Arial;
+      }
+
+      .container img {
+        position: relative;
+        left: 50%;
+        margin-left: -164px;
+      }
+
+      .container #signinButton {
+        float: right;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId={{ fb_app_id }}";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="container">
+
+      <iframe width="640" height="360" src="//www.youtube.com/embed/{{ videoid }}" frameborder="0" allowfullscreen></iframe>
+
+      <h1>{{ titolo }}</h1>
+      <p>{{ url }}</p>
+      <p>{{ url_assoluto }}</p>
+      
+      <p>{{ descrizione }}</p>
+
+      <fb:like href="{{ url_assoluto }}" send="false" width="450" show_faces="true"></fb:like>
+    </div>
+  </body>
+</html>
