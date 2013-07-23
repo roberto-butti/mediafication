@@ -92,16 +92,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin: 10px 0px;
 }
 /* line 31, ../sass/app.scss */
+.container .invisible {
+  display: none;
+}
+/* line 35, ../sass/app.scss */
 .container #signinButton {
   float: right;
 }
-/* line 35, ../sass/app.scss */
+/* line 39, ../sass/app.scss */
 .container .contenitore-video {
   background: url("../images/old-television.gif") no-repeat 0px 0px;
   position: relative;
   min-height: 710px;
 }
-/* line 40, ../sass/app.scss */
+/* line 44, ../sass/app.scss */
 .container .contenitore-video iframe {
   position: absolute;
   width: 620px;
@@ -109,7 +113,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   top: 80px;
   left: 100px;
 }
-/* line 48, ../sass/app.scss */
+/* line 52, ../sass/app.scss */
 .container .contenitore-video .controlli {
   position: absolute;
   width: 164px;
@@ -117,25 +121,30 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   right: 24px;
   top: 80px;
 }
-/* line 55, ../sass/app.scss */
+/* line 59, ../sass/app.scss */
 .container .contenitore-video .controlli span {
   cursor: pointer;
 }
-/* line 57, ../sass/app.scss */
+/* line 61, ../sass/app.scss */
 .container .contenitore-video .controlli span:hover {
   opacity: 0.5;
 }
-/* line 61, ../sass/app.scss */
-.container .contenitore-video .controlli span .play, .container .contenitore-video .controlli span .info {
+/* line 66, ../sass/app.scss */
+.container .contenitore-video .controlli .play, .container .contenitore-video .controlli .info {
   margin-top: 30px;
+  display: block;
+  float: left;
+}
+/* line 71, ../sass/app.scss */
+.container .contenitore-video .controlli .play img, .container .contenitore-video .controlli .info img {
   width: 30px;
   height: 30px;
 }
-/* line 67, ../sass/app.scss */
-.container .contenitore-video .controlli span .play {
+/* line 77, ../sass/app.scss */
+.container .contenitore-video .controlli .play {
   margin-left: 30px;
 }
-/* line 71, ../sass/app.scss */
-.container .contenitore-video .controlli span .info {
+/* line 81, ../sass/app.scss */
+.container .contenitore-video .controlli .info {
   margin-left: 30px;
 }

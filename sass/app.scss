@@ -28,6 +28,10 @@
 	    }
     }
 
+    .invisible {
+        display: none;
+    }
+
     #signinButton {
         float: right;
     }
@@ -57,20 +61,25 @@
                 &:hover {
                     opacity: 0.5;
                 }
+            }
 
-                .play, .info {
-                    margin-top : 30px;
+            .play, .info {
+                margin-top : 30px;
+                display: block;
+                float: left;
+
+                img {
                     width: 30px;
                     height: 30px;
                 }
+            }
 
-                .play {
-                    margin-left: 30px;
-                }
+            .play {
+                margin-left: 30px;
+            }
 
-                .info {
-                    margin-left: 30px;
-                }
+            .info {
+                margin-left: 30px;
             }
         }
 
