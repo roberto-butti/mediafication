@@ -36,52 +36,58 @@
         float: right;
     }
 
-    .contenitore-video {
-    	background: url('../images/old-television.gif') no-repeat 0px 0px;
-    	position: relative;
-    	min-height: 710px;
+    .reveal {
+        .slides {
+            section.contenitore-video {
+                background: url('../images/old-television.gif') no-repeat 0px 0px;
+                position: relative;
+                min-height: 710px;
 
-    	iframe {
-    		position: absolute;
-			width: 620px;
-			height: 460px;
-			top: 80px;
-			left: 100px;
-    	}
-
-        .controlli {
-            position: absolute;
-            width: 164px;
-            height: 330px;
-            right: 24px;
-            top: 80px;
-
-            span {
-                cursor: pointer;
-                &:hover {
-                    opacity: 0.5;
+                iframe {
+                    position: absolute;
+                    width: 620px;
+                    height: 460px;
+                    top: 80px;
+                    left: 100px;
                 }
-            }
 
-            .play, .info {
-                margin-top : 30px;
-                display: block;
-                float: left;
+                .controlli {
+                    position: absolute;
+                    width: 164px;
+                    height: 330px;
+                    right: 24px;
+                    top: 80px;
 
-                img {
-                    width: 30px;
-                    height: 30px;
+                    span {
+                        cursor: pointer;
+                        &:hover {
+                            opacity: 0.5;
+                        }
+                    }
+
+                    .play, .info {
+                        margin-top : 30px;
+                        display: block;
+                        float: left;
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+
+                    .play {
+                        margin-left: 30px;
+                    }
+
+                    .info {
+                        margin-left: 30px;
+                    }
                 }
-            }
 
-            .play {
-                margin-left: 30px;
-            }
-
-            .info {
-                margin-left: 30px;
-            }
+            }            
         }
-
     }
+
+
 }

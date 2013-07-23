@@ -1,13 +1,17 @@
-      <div class="contenitore-video">
+
+<div class="reveal">
+    <div class="slides">
+
+      <section id="video" class="contenitore-video">
         <iframe width="640" height="360" src="//www.youtube.com/embed/{{ videoid }}" frameborder="0" allowfullscreen></iframe>
 
         <div class="controlli">
           <span class="play"><img src="/images/play-button.png"></img></span>
           <span class="info"><img src="/images/info-button.png"></img></span>
         </div>
-      </div>
+      </section>
 
-      <div class="informazioni invisible">
+      <section class="informazioni invisible">
         <h1>{{ titolo }}</h1>
         <ul>
           <li>{{ url }}</li>
@@ -15,4 +19,9 @@
           <li>{{ descrizione }}</li>
         </ul>
         <fb:like href="{{ url_assoluto }}" send="false" width="450" show_faces="true"></fb:like>
-      </div>
+      </section>
+            
+    </div>
+  </div>
+
+  <a href="#video">Link</a>
