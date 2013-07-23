@@ -3,21 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>{{ titolo }}</title>
-
-    <meta property="og:site_name" content="{{ sito_nome }}">
-    <meta property="og:url" content="{{ url }}">
-    <meta property="og:title" content="{{ titolo }}">
-    <meta property="og:type" content="video">
-    <meta property="og:image" content="{{ immagine }}">
-
-    <meta property="og:description" content="{{ descrizione }}">
-
-    <meta property="og:video" content="http://www.youtube.com/v/{{ videoid }}?version=3&amp;autohide=1">
-    <meta property="og:video:type" content="application/x-shockwave-flash">
-    <meta property="og:video:width" content="640">
-    <meta property="og:video:height" content="360">
-
-    <meta property="fb:admins" content="{{ fb_admin_id }}" />
+    {% include 'block/metaog.twig' %}
 
     <link rel="stylesheet" href="stylesheets/app.css" media="Screen" type="text/css" />
 
@@ -27,14 +13,7 @@
   </head>
 
   <body>
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId={{ fb_app_id }}";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+  {% include 'block/js_fb.twig' %}
 
     <div class="container">
 
