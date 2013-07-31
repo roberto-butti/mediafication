@@ -5,7 +5,7 @@ $f3=require('lib/base.php');
 $f3->config('config.ini');
  error_reporting(E_ALL);
  ini_set("display_errors", 1);
- 
+
 $f3->route('GET /',
 	function($f3) {
 		$classes=array(
@@ -70,6 +70,12 @@ $f3->route('GET /',
 $f3->route('GET /userref',
 	function() {
 		echo View::instance()->render('userref.htm');
+	}
+);
+
+$f3->route('GET /phpinfo',
+	function() {
+		phpinfo();
 	}
 );
 
