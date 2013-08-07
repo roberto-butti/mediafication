@@ -35,13 +35,17 @@ $f3->route('GET /media/create',
     	$media=new DB\Jig\Mapper($db,'media');
 	    $media->mediaid='thedreambuilders';
 			$media->hashtag='thedreambuilders';
+			$media->twitterwdigetid='365103485403942912';
+
 			$media->url='http://infinite-savannah-6486.herokuapp.com/media/'.$media->mediaid;
 			$media->title="The Dreambuilders";
+
 			$media->claim="Tutti i sogni hanno un prezzo";
 			$media->image="http://distilleryimage7.ak.instagram.com/9f0cd27aff5511e28a3222000a9f17b2_7.jpg";
 			$media->save();
 			$media=new DB\Jig\Mapper($db,'media');
 	    $media->mediaid='tomorrow';
+	    $media->twitterwdigetid='365104852013047808';
 			$media->hashtag='ilpreludiodelfuturo';
 			$media->url='http://infinite-savannah-6486.herokuapp.com/media/'.$media->mediaid;
 			$media->title="Tomorrow";
