@@ -50,6 +50,8 @@ $f3->route('GET /media/create',
 			$media->url='http://infinite-savannah-6486.herokuapp.com/media/'.$media->mediaid;
 			$media->title="Tomorrow";
 			$media->claim="Il preludio del futuro";
+			$media->image="http://distilleryimage10.ak.instagram.com/96e78f70f38b11e2a46f22000a1de414_7.jpg";
+			
 			$media->save(); 
 
 			$media->load();
