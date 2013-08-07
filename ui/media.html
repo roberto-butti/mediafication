@@ -1,0 +1,36 @@
+
+<html>
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# video: http://ogp.me/ns/video#">
+      <title><?php echo $media->title ?></title>
+
+      
+      <meta property="fb:app_id" content="194235424077945" />
+      <meta property="og:title" content="<?php echo $media->title ?>" />
+      <meta property="og:image" content="<?php echo $media->image ?>" />
+      <meta property="og:url" content="<?php echo $media->url ?>" />
+      <meta property="og:type" content="video.movie" />
+
+
+      <link type="text/css" rel="stylesheet" href="/ui/css/app.css" />
+      <link type="text/css" rel="stylesheet" href="/ui/css/bootstrap.css" />
+
+  </head>
+  <body>
+    <div class="container-narrow">
+      <div class="jumbotron">
+        <h1><?php echo $media->title ?></h1>
+        <p class="lead">
+            <?php echo $media->claim ?>
+            <hr>
+            <img src="<?php echo $media->image ?>">
+        </p>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
+
+
+
+
