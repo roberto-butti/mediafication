@@ -1,42 +1,99 @@
 
 <html>
   <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# video: http://ogp.me/ns/video#">
-      <title><?php echo $media->title ?></title>
+    <title><?php echo $media->title ?></title>
 
-      
-      <meta property="fb:app_id" content="194235424077945" />
-      <meta property="og:title" content="<?php echo $media->title ?>" />
-      <meta property="og:image" content="<?php echo $media->image ?>" />
-      <meta property="og:url" content="<?php echo $media->url ?>" />
-      <meta property="og:type" content="video.movie" />
+    
+    <meta property="fb:app_id" content="194235424077945" />
+    <meta property="og:title" content="<?php echo $media->title ?>" />
+    <meta property="og:image" content="<?php echo $media->image ?>" />
+    <meta property="og:url" content="<?php echo $media->url ?>" />
+    <meta property="og:type" content="video.movie" />
 
+    <meta property="video:duration" content="154" />
+    <meta property="video:actor" content="https://www.facebook.com/roberto.butti" />
+    <meta property="video:actor" content="https://www.facebook.com/nicola.delazzari" />
+    <meta property="video:director" content="https://www.facebook.com/roberto.butti" />
+    <meta property="video:writer"  content="https://www.facebook.com/roberto.butti" />
+    <meta property="video:tag"  content="fantasy" />
 
-      <link type="text/css" rel="stylesheet" href="/ui/css/app.css" />
-      <link type="text/css" rel="stylesheet" href="/ui/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="/ui/css/app.css" />
+    <link type="text/css" rel="stylesheet" href="/ui/css/bootstrap.css" />
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
   </head>
   <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/it_IT/all.js#xfbml=1&appId=194235424077945";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '194235424077945', // App ID
+          status     : true, // check login status
+          cookie     : true, // enable cookies to allow the server to access the session
+          xfbml      : true  // parse XFBML
+        });
+      };
+
+      // Load the SDK Asynchronously
+      (function(d){
+        var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        d.getElementsByTagName('head')[0].appendChild(js);
+      }(document));
+
+      $(document).ready(function() {
+
+            $('#watch').click(function() {
+              FB.api(
+                'me/video.watches',
+                'post',
+                    {
+                      movie: "<?php echo $media->url ?>"
+                    },
+                    function(response) {
+                      console.log(response);
+                  }
+                );
+              });
+
+            $('#want-watch').click(function() {
+              FB.api(
+                'me/video.wants_to_watch',
+                'post',
+                  {
+                    movie: "<?php echo $media->url ?>"
+                  },
+                    function(response) {
+                      console.log(response);
+                  } 
+                );
+              });
+
+          });
+    </script>
 
     <div class="container-narrow">
+
+      <fb:login-button show-faces="true" width="200" max-rows="1" scope="publish_actions" class="fblogin"></fb:login-button>
+
       <div class="jumbotron">
         <h1><?php echo $media->title ?></h1>
         <p class="lead">
-            <?php echo $media->claim ?>
+          <?php echo $media->claim ?>
             <hr>
+
+            <button id="watch" type="button">Watch!</button>
+            <button id="want-watch" type="button">Want Watch!</button>
+            <hr>
+
             <img src="<?php echo $media->image ?>">
             <hr>
             <div class="fb-like" data-href="<?php echo $media->url ?>" data-width="450" data-show-faces="true" data-send="true"></div>
             <hr>
             <a class="twitter-timeline" href="https://twitter.com/search?q=%23<?php echo $media->hashtag ?>" data-widget-id="<?php echo $media->twitterwdigetid ?>">Tweet su "#<?php echo $media->hashtag ?>"</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
         </p>
       </div>
